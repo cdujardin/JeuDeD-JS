@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+          <meta charset="utf-8"/>
+          <title>Jeu du Lancé de dé</title>
+          <link rel=stylesheet type="text/css" href="#">
+          <script language="JavaScript">
+               var lancé1=0;
+               var lancé2=0;
+
+               function lancer(){
+                    lancé1=Math.ceil(Math.random()*6);
+                    lancé2=Math.ceil(Math.random()*6);
+
+                    if(lancé1!=0 && lancé2!=0){
+                         if(lancé1==lancé2){
+                               document.getElementById('return').innerHTML = "<p>Le premien lancé : "+lancé1+" est égal au deuxième lancé : "+lancé2+" </p>";
+                         }else if (lancé1>lancé2) {
+                              document.getElementById('return').innerHTML= "<p>Le premien lancé : "+lancé1+" est suppérieur au deuxième lancé : "+lancé2+" </p>";
+                         }else if(lancé1<lancé2){
+                              document.getElementById('return').innerHTML= "<p>Le premien lancé : "+lancé1+" est inférieur au deuxième lancé : "+lancé2+" </p>";
+                         }else{
+                              document.getElementById('return').innerHTML = "<p> </p>";
+                         }
+                    }else{
+                         document.getElementById('return').innerHTML = "<p>  </p>";
+                    };
+
+                    return;
+               };
+
+
+
+
+          </script>
+     </head>
+
+     <body>
+          <h1>Jeu du lancé de dé</h1>
+          <p>Cliquez pour lancer le dé</p>
+          <button onclick="lancer();">Lancer le Dé</button>
+          <div id="return"> </div>
+
+     </body>
+</html>
